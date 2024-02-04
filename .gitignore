@@ -1,9 +1,8 @@
-# Created by https://www.gitignore.io
-
-
 
 env/
 env_flask/
 admin/.dbdata/
+admin/.dbdata/
 admin/.mysql/
 main/.dbdata/
+frontend/node_modules/
