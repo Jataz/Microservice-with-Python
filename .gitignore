@@ -6,3 +6,4 @@ admin/.dbdata/
 admin/.mysql/
 main/.dbdata/
 frontend/node_modules/
+admin/admin/__pycache__/
