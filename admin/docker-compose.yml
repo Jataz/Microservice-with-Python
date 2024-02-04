@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+      - rabbitmq
+
+ # queue:
+  #  build: .
+   # command: python consumer.py
+    #depends_on:
+     # - db
+      #- rabbitmq
+
+  db:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_DATABASE: admin
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33066:3306
+
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: rabbitmq_container
+    restart: always
+    ports:
+      - 5672:5672 # AMQP port
+      - 15672:15672 # RabbitMQ management UI port
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+
+
+networks:
+  default:
+    external: true
+    name: mynetwork
