@@ -1,29 +1,28 @@
-<h1>Microservice-with-Python</h1>
-<p>To run the project you make sure you have python installed</p>
-<p>Follow the following steps to run the project</p>
-<hr>
-<h2>Backend</h2>
--admin - written in django
--to install packages run pip install -r requirements.txt
--main - written in flask
--to install packages run pip install -r requirements.txt
+# Microservice-with-Python
 
-Docker should be installed in your machine 
-To build docker file run docker compose up it will build a docker container 
+This project is a microservice-based application written in Python. It consists of a backend and a frontend component. The backend is divided into two services: admin, which is built using Django, and main, which is built using Flask. The frontend is built using a JavaScript framework.
 
-the database container will build and rabbitmq management
+## Prerequisites
+Before running the project, make sure you have the following prerequisites installed:
+- Python
+- Docker
+- Node.js (for the frontend)
 
-Admin will listen to port 8000
-Flask app main will listen to 8001
+## Backend Setup
+1. Install the required Python packages by running the following command in the terminal: pip install -r requirements.txt
+2. Build the Docker container by running the following command:docker-compose up
+   
+This will build the Docker container for the backend services and also set up the database container and RabbitMQ management.
 
-Database will listen to port 33066 to access the database 
-Rabbitmq will listen to port 15672 to access rabbitmq UI
+4. The admin service will be accessible on port 8000, and the Flask app (main service) will be accessible on port 8001.
 
-Access the django container and run django migrations
-Access the flask container and run flask migrations
+5. To access the database, use port 33066.
 
+6. RabbitMQ can be accessed through port 15672.
 
+7. Access the Django container and run the Django migrations.
 
-Frontend 
-run nmp install to install packages 
-npm start to start the project
+8. Access the Flask container and run the Flask migrations.
+
+## Frontend Setup
+1. Install the required Node.js packages by running the following command in the terminal:
