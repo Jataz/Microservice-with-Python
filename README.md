@@ -25,4 +25,7 @@ This will build the Docker container for the backend services and also set up th
 8. Access the Flask container and run the Flask migrations.
 
 ## Frontend Setup
-1. Install the required Node.js packages by running the following command in the terminal:
+1. Install the required Node.js packages by running the following command in the terminal:npm install
+2. This will start the frontend application by running the following command in the terminal:npm start
+
+
